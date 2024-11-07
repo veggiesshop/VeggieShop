@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkout</title>
+
+    <!-- This code is needed for responsive design to work. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Load a font called Roboto from Google Fonts. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Here are the CSS files for this page. -->
+    <link rel="stylesheet" href="styles/shared/general.css">
+    <link rel="stylesheet" href="styles/pages/checkout/checkout-header.css">
+    <link rel="stylesheet" href="styles/pages/checkout/checkout.css">
+    
+    <!-- New CSS for the payment method -->
+    <link rel="stylesheet" href="styles/pages/checkout/payment.css">
+
+    <!--CSS For CheckoutLoc-->
+    <link rel="stylesheet" href="styles/pages/checkout/checkoutLocation.css">
+  </head>
+  <body>
+   
+
+        <div class="top-bar">
+          <a href="customer.html" class="back-icon" id="backIcon">⬅️</a>
+          <div class="checkout-header-middle-section">
+            Checkout (<a class="return-to-home-link" href="customer.html"> items</a>)  
+          </div>
+          <div class="logo-container">
+              <img src="./images/Veglogo-Transparent.png" alt="VeggieShop Logo" class="logo">
+          </div>
+      </div>
+
+        
+
+     
+
+    <div class="main">
+      <div class="page-title">Review your order</div>
+
+      <div class="checkout-grid">
+        <div class="order-summary js-order-summary"></div>
+
+        <div class="payment-summary js-payment-summary"></div>
+
+        <div class="location-summary">
+          <h3>Enter Your Address</h3>
+          <input type="text"  id = "house-number" class="input-address" placeholder="House Number" required>
+          <input type="text" id = "street" class="input-address" placeholder="Street" required>
+          <input type="text" id = "purok" class="input-address" placeholder="Purok" required>
+          <input type="text" id = "barangay" class="input-address" placeholder="Barangay" required>
+          <input type="text" id = "city" class="input-address" placeholder="City" required>
+          <input type="text" id = "province" class="input-address" placeholder="Province" required>
+        </div>
+        
+
+        <!-- Mode of Payment Section with logos -->
+        <div class="payment-method">
+          <h3>Select Mode of Payment</h3>
+          
+          <div class="payment-option">
+            <input type="radio" id="cod" name="payment-method" value="COD">
+            <img src="images/COD.jpg" alt="Cash on Delivery">
+            <label for="cod">Cash on Delivery</label>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" id="gcash" name="payment-method" value="GCash">
+            <img src="images/Gcash.jpg" alt="GCash">
+            <label for="gcash">GCash</label>
+          </div>
+
+          <div class="payment-option">
+            <input type="radio" id="paymaya" name="payment-method" value="PayMaya">
+            <img src="images/Paymaya.jpg" alt="PayMaya">
+            <label for="paymaya">PayMaya</label>
+          </div>
+        </div>
+
+        <button type="submit" id="submit-order" class="place-order-button">
+          Place Order
+        </button>
+        
+      </div>
+      <div class="error-message hidden" id="errorMessage">
+        Invalid username or password. Please try again.
+    </div>
+    </div>
+
+    <script type="module" src="./scripts/checkout.js"></script>
+  </body>
+</html>

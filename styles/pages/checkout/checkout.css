@@ -1,0 +1,269 @@
+body {
+  background: #aadaae; /* VeggieShop greenish background */
+}
+
+.main {
+  max-width: 1100px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-color: #333;
+  margin-top: 140px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-title {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  column-gap: 12px;
+  align-items: start;
+}
+
+.payment-summary-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.payment-summary {
+  padding-bottom: 5px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  margin-top: 11px;
+  margin-bottom: 15px;
+  background-color: #DBDF99; /* VeggieShop goldish color for buttons */
+  border: 1px solid #A88734;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .payment-summary-container {
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+  
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cart-item-container,
+.payment-summary {
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 4px;
+  padding: 18px;
+}
+
+.cart-item-container {
+  margin-bottom: 12px;
+}
+
+.payment-summary {
+  padding-bottom: 5px;
+}
+
+@media (max-width: 1000px) {
+  .payment-summary {
+    grid-row: 1;
+    margin-bottom: 12px;
+  }
+}
+
+.delivery-date {
+  color: rgb(1, 10, 1);
+  font-weight: 700;
+  font-size: 19px;
+  margin-top: 5px;
+  margin-bottom: 22px;
+}
+
+.cart-item-details-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  column-gap: 25px;
+}
+
+@media (max-width: 1000px) {
+  .cart-item-details-grid {
+    grid-template-columns: 100px 1fr;
+    row-gap: 30px;
+  }
+}
+
+#submit-order {
+  background-color: #e3e840; /* Slightly darker green for order button */
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-name {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.product-price {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.payment-method {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #DBDF99, #38C03E); /* Gradient matching VeggieShop colors */
+  width: 300px;
+}
+
+.payment-method h3 {
+  margin-bottom: 15px;
+  font-weight: 500;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.payment-option:hover {
+  background-color: #5baf56; /* Hover effect with primary green */
+}
+
+.payment-option img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  border-radius: 50%; /* Makes the logo round */
+}
+
+.payment-option label {
+  font-size: 1.1em;
+  color: #333;
+  cursor: pointer;
+}
+
+.payment-option input {
+  margin-right: 10px;
+}
+
+.delivery-options-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.delivery-option {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.delivery-option-input {
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+.delivery-option-date {
+  color: rgb(62, 78, 62);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.delivery-option-price {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}
+
+.payment-summary-title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.payment-summary-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  font-size: 15px;
+  margin-bottom: 9px;
+}
+
+.payment-summary-money {
+  text-align: right;
+}
+
+.subtotal-row .payment-summary-money {
+  border-top: 1px solid rgb(0, 0, 0);
+}
+
+.subtotal-row div {
+  padding-top: 9px;
+}
+
+.total-row {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  font-size: 18px;
+  border-top: 1px solid rgb(222, 222, 222);
+  padding-top: 18px;
+}
+
+.place-order-button {
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 8px;
+  margin-top: 11px;
+  margin-bottom: 15px;
+  background-color: #DBDF99; /* Goldish color for Place Order button */
+}
+
+.error-message {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 25px;
+  display: block;
+  width: 66%;
+  opacity: 0;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.error-message.show {
+  opacity: 1; /* Show the message */
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}

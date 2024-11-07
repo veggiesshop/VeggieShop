@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeggieShop - Home</title>
+    <link rel="stylesheet" href="./css/Homepagestyles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="amazon-header">
+        <div class="right-buttons">
+            <button id="menuBtn" onclick="goToLogin()">Login</button>
+            <a href="./pages/signup/signup.html" id="signupBtn">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Search Bar Section -->
+    <div class="search-bar-container">
+        <div  class="search-bar"></div> 
+      
+       
+    </div>
+
+    <!-- Logos Section -->
+    <div class="logos-container">
+        <div class="logo-container">
+            <img src="./images/Veglogo-Transparent.png" alt="VeggieShop Logo" class="veggie-logo">
+        </div>
+        <div class="logo-container">
+            <img src="./images/Sunn Logo.png" alt="Sunn Logo" class="veggie-logo">
+        </div>
+        <div class="logo-container">
+            <img src="./images/Education logo.png" alt="Education Logo" class="veggie-logo">
+        </div>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1 class="welcome-text">Welcome to VeggieShop</h1>
+    </div>
+    
+
+    <!-- Products Section -->
+    <div class="productmain">
+        <h1 class="heading">Our Products</h1>
+        <div class="main">
+            <div class="products-grid js-products-grid">
+                <!-- Example Product Item -->
+                <div class="product-item">
+                    <img src="./images/product1.jpg" alt="Product 1" class="product-image">
+                    <h2 class="product-title">Product Title 1</h2>
+                    <p class="product-description">Description of Product 1.</p>
+                    <p class="product-price">$10.00</p>
+                    <button class="add-to-cart-btn" onclick="goToLogin()">Add to Cart</button>
+                </div>
+                <div class="product-item">
+                    <img src="./images/product2.jpg" alt="Product 2" class="product-image">
+                    <h2 class="product-title">Product Title 2</h2>
+                    <p class="product-description">Description of Product 2.</p>
+                    <p class="product-price">$15.00</p>
+                    <button class="add-to-cart-btn" onclick="goToLogin()">Add to Cart</button>
+                </div>
+                <!-- Repeat similar blocks for more products -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goToLogin() {
+            window.location.href = "./login.html"; // Redirect to login page
+        }
+    </script>
+   
+    <script type="module" src="./scripts/amazon.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VeggieShop</title>
+    <link rel="stylesheet" href="./css/login.css">
+
+    <!--Firebase Scripts-->
+    <script type="module" src = "./scripts/login/authenticationScript.js"></script> 
+</head>
+<body>
+    <a href="index.html" class="back-icon" id="backIcon">⬅️</a>
+    <div class="pos">
+    <div class="Logo">
+        <img src="./images/Veglogo-Transparent.png" alt="VeggieShop Logo" class="logo">
+    </div>
+    <div class="login-container">
+        <div class="login-header">
+            <input type="radio" name="userType" id="farmer" checked>
+            <label for="farmer" class="toggle-option">Farmer</label>
+
+            <input type="radio" name="userType" id="user">
+            <label for="user" class="toggle-option">User</label>
+
+            <input type="radio" name="userType" id="admin">
+            <label for="admin" class="toggle-option">Admin</label>
+            
+            <div class="slide"></div>
+        </div>
+        <div class="login-form farmer-form">
+            <h2>Login</h2>
+            <form id="loginFormFarmer">
+                <input type="text" id="farmerUsername" placeholder="Farmer Username" required>
+                <input type="password" id="farmerPassword" placeholder="Farmer Password" required>
+                <!-- Show password toggle for farmer -->
+                <div class="show-password-container">
+                    <input type="checkbox" id="showFarmerPassword">
+                    <label for="showFarmerPassword">Show Password</label>
+                </div>
+                <button type="submit" id="farmerLoginBtn">Login</button>
+            </form>
+        </div>
+        <div class="login-form user-form hidden">
+            <h2>Login</h2>
+            <form id="loginFormUser">
+                <input type="text" id="userUsername" placeholder="User Username" required>
+                <input type="password" id="userPassword" placeholder="User Password" required>
+                <!-- Show password toggle for user -->
+                <div class="show-password-container">
+                    <input type="checkbox" id="showUserPassword">
+                    <label for="showUserPassword">Show Password</label>
+                </div>
+                <button type="submit" id="userLoginBtn">Login</button>
+                <p class="bottom-text"><a class = "color-text" href="./pages/signup/signup.html">No Account Yet? Click here to Sign Up!</a></p>
+            </form>
+        </div>
+        
+        <div class="login-form admin-form hidden">
+            <h2>Login</h2>
+            <form id="loginFormAdmin">
+                <input type="text" id="adminUsername" placeholder="Admin Username" required>
+                <input type="password" id="adminPassword" placeholder="Admin Password" required>
+                <!-- Show password toggle for admin -->
+                <div class="show-password-container">
+                    <input type="checkbox" id="showAdminPassword">
+                    <label for="showAdminPassword">Show Password</label>
+                </div>
+                <button type="submit" id="adminLoginBtn">Login</button>
+                
+            </form>
+        </div>
+
+        
+        
+        <div class="error-message hidden" id="errorMessage">
+            Invalid username or password. Please try again.
+        </div>
+
+    </div>
+    </div>
+    <script src="./scripts/login/loginAnim.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Farmer Dashboard - VeggieShop</title>
+        <link rel="stylesheet" href="../../css/farmer-css.css">
+
+        <!--Firebase Module Scripts-->
+        <script type="module" src ="../../scripts/farmer/addProducts.js"></script> <!--Handles the Adding of Products-->
+        <script type="module" src ="../../scripts/farmer/displayProducts.js"></script> <!--Handles the Displaying of Products-->
+        <script type="module" src = "../../scripts/farmer/farmerDisplay.js"></script><!--Displaying of Farmer Name-->
+        <script type="module" src = "../../scripts/farmer/displayEarnings.js"></script><!--Displaying of Farmer Name-->
+        <script type="module" src = "../../scripts/farmer/orderConfirmation.js"></script><!--Displaying of Orders-->
+        <script type="module" src = "../../scripts/farmer/orderHistory.js"></script><!--Displaying of Order History-->
+
+    </head>
+    <body>
+        <div class="logo-container">
+            <img src="../../images/Veglogo-Transparent.png" alt="VeggieShop Logo" class="logo">
+        </div>
+
+        <div class="right-sidebar">
+            <h1 class="center">Farmer Dashboard</h1>
+            <div class="admin-info">
+                <h2 id="farmerName">Welcome, Admin!</h2>
+            </div>
+            <div class="functions-container">
+                <div class="btnPos">
+                <button class="function-btn" id="manageProductsBtn">Manage Products</button>
+                <button class="function-btn" id="manageOrdersBtn">Your Orders</button>
+                <button class="function-btn" id="ordHistory">Order History</button>
+                <button class="function-btn" id="chatBtn">Messages</button>
+
+                <a href="../live-support-farmer.html" class="function-btn">Go To Live</a>
+                <button class="function-btn" id="logoutBtn">Logout</button>
+
+                </div>
+            </div>
+        </div>
+
+<!-- Your Orders Section -->
+<div id="orderList" class="content-section">
+    <h2 class="HeaderStatus">Your Orders</h2>
+    <div id="orderLists">
+        <h3>Orders</h3>
+        <!-- Orders will be appended here dynamically -->
+    </div>
+</div>
+
+
+        <!--Manage Products Section-->
+<div id="farmerProducts" class="content-section">
+    <h2 class="HeaderStatus">Manage Products</h2>
+
+    <!-- Search Bar -->
+    <form id="searchFarmerForm">
+        <div>
+            <input type="text" id="searchUsername" name="searchUsername" placeholder="  Enter Your Product Name here to manage">
+        </div>
+    </form>
+
+    <!-- Add Button to Trigger Modal -->
+    <div id="modalBtnContainer">
+        <h3 style="margin-right: 650px; font-weight: bold">Total Earnings: <span style="color: #45BB3E; font-weight: bold;">₱</span><span id="farmerEarnings" style="color: #45BB3E; font-weight: bold;">0.00</span></h3>
+        <button id="openModalBtn" class="custom-modal-btn">Add</button>
+        <button id="openModalBtn2" class="custom-modal-btn2">Select</button>
+        <button id="deleteSelectedBtn" class="hidden custom-modal-btn2">Delete Selected</button>
+    </div>
+
+    <!-- List of products -->
+    <div id="productsList">
+        <h3>My Products</h3>
+    </div>
+
+    <div class="error-message hidden" id="errorMessage">
+        Invalid username or password. Please try again.
+    </div>
+</div>
+    
+
+    <!-- Modal for Adding Products -->
+        <div id="productModal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-title">Add New Product</h2>
+        <form id="addProductForm">
+            <input type="text" id="prodName" name="prodName" placeholder="Product Name" required>
+            <input type="number" id="prodPrice" name="prodQty" step="0.01" min="0" placeholder="Product Price" required>
+            <input type="text" id="prodDesc" placeholder="Product Description" required>
+            <input type="number" id="prodQty" name="prodQty" step="0.01" min="0" placeholder="Product Quantity" required>
+            
+            <!-- Image Upload -->
+             <div class="imageUploadContainer">
+                <input type="file" id="imageUpload" accept="image/*" required>
+                <span id="file-name">No file chosen</span>
+            </div>
+
+            <button type="submit" class="custom-add-button">Add Product</button>
+        </form>
+    </div>
+    </div>
+
+    <!-- Modal for Editing Products -->
+<div id="editModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn close">&times;</span>
+        <h2 class="modal-title">Edit Product</h2>
+        <form id="editProductForm">
+            <input type="hidden" id="editProductId">
+            <input type="text" id="productName" placeholder="Product Name" required>
+            <input type="number" id="productPrice" step="0.01" min="0" placeholder="Product Price" required>
+            <input type="text" id="productDescription" nplaceholder="Product Description" required>
+            <input type="number" id="productQuantity" name="prodQty" placeholder="Product Quantity" required>
+
+            <div class="imageUploadContainer">
+            <input type="file" id="productImage">
+            </div>
+            <button type="submit" class="custom-edit-btn" >Save Changes</button>
+        </form>
+    </div>
+</div>
+
+    <script src ="../../scripts/farmer/farmerScript.js"></Script>
+    </body>
+    </html>

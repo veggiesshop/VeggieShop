@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeggieShop - Messages</title>
+    <link rel="stylesheet" href="../css/messages.css">
+    <script type="module" src="../scripts/messages/messages.js"></script>
+    <script type="module" src="../scripts/messages/searchFunction.js"></script>
+    <script type="module" src="../scripts/messages/convList.js"></script>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="../customer.html" class="back-icon" id="backIcon">⬅️</a>
+        <div class="logo-container">
+            <img src="../images/Veglogo-Transparent.png" alt="VeggieShop Logo" class="logo">
+        </div>
+    </div>
+
+    <!-- Chat System -->
+    <div class="chat-system" id="chatSystem">
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search users by name" />
+            <!-- Add a div to show the search results dropdown -->
+            <div id="searchResults" class="search-results"></div>
+            <div class="conversation-list" id="conversationList">
+                <!-- Conversations will be dynamically populated here -->
+            </div>
+        </div>
+        
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-user-info" id="chatHeader">
+                    <span>Message</span>
+                </div>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <!-- Chat messages will appear here -->
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message" />
+                <button class="chat-send-btn" id="sendBtn" disabled>Send</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

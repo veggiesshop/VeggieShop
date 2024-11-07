@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeggieShop - Live Support</title>
+    <link rel="stylesheet" href="../css/live-support.css">
+</head>
+<body>
+    <div class="top-bar">
+        <a href="../customer.html" class="back-icon" id="backIcon">⬅️</a>
+        <div class="logo-container">
+            <img src="../images/Veglogo-Transparent.png" alt="VeggieShop Logo" class="logo">
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h2>Live Camera Feed</h2>
+        <button id="startCameraBtn" class="camera-btn">Start Camera</button>
+        <button id="goLiveBtn" class="camera-btn" style="display: none;">Go Live</button>
+        <button id="stopLiveBtn" class="camera-btn" style="display: none;">Stop Live</button> <!-- Stop Live button hidden initially -->
+        <div class="camera-container">
+            <div class="live-indicator" id="liveIndicator">● LIVE</div>
+            <video id="video" autoplay></video>
+        </div>
+    </div>
+
+    <script src="../scripts/live-support.js"></script>
+</body>
+</html>

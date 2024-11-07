@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VeggieShop - Home</title>
+    <link rel="stylesheet" href="./css/customer.css">
+</head>
+<body>
+
+    <div class ="productmain"> 
+        <h1 class="heading">Products</h1>    
+        <div class="main">
+            <div class="products-grid js-products-grid">
+            </div>
+          </div>
+        </div>
+        
+   <!-- Header Section with Logo and Search -->
+   <div class="amazon-header">
+        <div class="amazon-header-left-section">
+            <a href="./customer.html" class="header-link">
+                <img class="amazon-logo" src="./images/Veglogo-Transparent.png" alt="VeggieShop Logo">
+            </a>
+            <h1 class="center" id="userName">Welcome, Customer</h1>
+        </div>
+
+        <div class="amazon-header-middle-section">
+            <input class="search-bar" type="text" placeholder="Search for plants and veggies...">
+            <button class="search-button">
+                <img class="search-icon" src="./images/icons/search-icon.png" alt="Search">
+            </button>
+        </div>
+
+        <div class="amazon-header-right-section">
+            <a href="./checkout.html" class="cart-link header-link">
+                <div class="cart-quantity js-cart-quantity">0</div>
+                <div class="cart-text">Cart</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="navigation-container">
+        <a href="orders.html" class="nav-btn">Orders</a>
+        <a href="./pages/messages.html" class="nav-btn">Messages</a>
+        <a href="./pages/notifications.html" class="nav-btn">Notifications</a>
+        <a href="./pages/live-support.html" class="nav-btn">Go To Live</a>
+        <!-- Log Out Button -->
+        <a href="#" id="logout-button" class="nav-btn logout">Log Out</a>
+    </div>
+    
+
+    <!-- Main Content for Products -->
+
+    <script type="module" src="./scripts/customer/customerScripts.js"></script>
+    <script type="module" src="./scripts/amazon.js"></script>
+    <script src="./scripts/logout.js"></script> <!-- Include your logout script -->
+</body>
+</html>

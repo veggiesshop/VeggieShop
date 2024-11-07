@@ -1,0 +1,33 @@
+.location-summary {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: transparent;
+}
+
+.location-summary h3 {
+  color: #000000; /* VeggieShop greenish color */
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.input-address {
+  display: block;
+  width: 665px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.input-address:focus {
+  border-color: #45BB3E; /* VeggieShop greenish color for focus */
+  box-shadow: 0 0 5px rgba(69, 187, 62, 0.5); /* Light green glow */
+}
+
+.input-address::placeholder {
+  color: #a9a9a9; /* Light placeholder color */
+}
