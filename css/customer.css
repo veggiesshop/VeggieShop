@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+
+body {
+    font-family: 'Hammersmith One', sans-serif;
+    background-color: #4a8c4f;
+   
+  
+ 
+  
+}
+
+.amazon-header {
+    background-color: #122c21;
+    color: white;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 10;
+}
+
+
+
+/* Product grid container */
+.productmain .main .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center; /* Center the grid items horizontally */
+    margin: 0 auto; /* Ensure the grid is centered */
+}
+
+/* Main product container */
+.productmain {
+    background: rgb(113, 218, 113);
+    padding: 15px 9%;
+    padding-bottom: 100px;
+    margin: 3% auto;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Heading style */
+.heading {
+    text-align: center;
+    padding-bottom: 15px;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    margin-bottom: -80px;
+}
+
+/* Main container inside productmain */
+.productmain .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); /* Ensure responsiveness */
+    gap: 15px;
+    justify-content: center; /* Center the grid inside the main container */
+}
+
+/* Hover effect on products */
+.productmain .main .products-grid:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .productmain {
+        padding: 20px;
+    }
+}
+
+
+
+
+.amazon-header-left-section {
+    display: flex;
+    align-items: center;
+}
+
+.amazon-logo {
+    height: 50px;
+    width: auto;
+  
+}
+
+.amazon-header-middle-section {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    margin-left: -150PX;
+}
+
+
+.center {
+
+    margin-top: 20px;
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 40px; 
+    margin-left: 30PX;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #969100 0%, #228b22 50%, #969100 100%); /* Linear gradient colors */
+    -webkit-background-clip: text; /* Clip background to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text color transparent to reveal the background */
+    background-clip: text; /* For other browsers */
+
+}
+
+.search-bar {
+    width: 350px;
+    height: 40px;
+    border-radius: 25px;
+    padding-left: 15px;
+    border: 1px solid #45BB3E;
+    margin-right: 10px;
+ 
+}
+
+.search-button {
+    background-color: #45BB3E;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.search-button img {
+    height: 20px;
+    width: 20px;
+}
+
+.cart-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart-icon {
+  width: 50px; /* Adjusted size for the cart icon */
+}
+
+.cart-text {
+  margin-top: 12px; /* Margin for spacing between text and icon */
+  font-size: 15px; /* Font size for cart text */
+  font-weight: 700; /* Bold weight for cart text */
+  margin-left: 10px; /* Added margin to separate from icon */
+}
+
+.cart-quantity {
+  color: rgb(240, 136, 4); /* Color for the quantity indicator */
+  font-size: 16px; /* Font size for quantity */
+  font-weight: 700; /* Bold weight for quantity text */
+  position: absolute; /* Positioned relative to the cart link */
+  top: -3px; /* Position from the top */
+  left: 22px; /* Position from the left */
+  width: 26px; /* Fixed width for quantity display */
+  text-align: center; /* Center align the quantity text */
+}
+
+
+.main {
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.products-grid {
+    margin-top: 150px;
+    margin-left: 90px;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* Ensures 8 equal columns */
+    gap: 20px; /* Adds spacing between product containers */
+}
+
+.product-container {
+    padding: 20px;
+    background-color: #e7eab4;
+    border: 1px solid rgb(81, 98, 0);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-container:hover {
+    transform: scale(1.09);
+    box-shadow: 0 4px 10px white;
+}
+
+.product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.product-rating-stars {
+    width: 100px;
+    margin-right: 6px;
+}
+
+.product-rating-count {
+    color: rgb(70, 192, 29);
+    cursor: pointer;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #2eb030;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.product-quantity-container {
+    margin-bottom: 17px;
+    text-align: center;
+}
+
+.product-spacer {
+    flex: 1;
+}
+
+.added-to-cart {
+    color: rgb(6, 125, 98);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    opacity: 0; /* Initially invisible, controlled by JavaScript */
+}
+
+.cart-icon {
+    margin-top: 5px;
+    height: 50px;
+    width: 75px;
+}
+
+.added-to-cart img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.add-to-cart-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #45BB3E;
+    color: white;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+    background-color: #38C03E;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #228b22;
+    color: white;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.buy-button:hover {
+    background-color: #7fc62e;
+}
+
+/* Navigation buttons at the bottom */
+.navigation-container {
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+    gap: 80px; /* Space between navigation items */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    background-color: #1d702e;
+}
+
+.nav-btn {
+    background-color: rgb(56, 192, 62); 
+    font-family: 'Hammersmith One', sans-serif;
+    border: 5px solid #dbdf99; 
+    color: #1b201b; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.90em;
+    font-weight: 400;
+    border-radius: 4px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    transition: 0.5s;
+    text-align: center;
+    max-width: 200px; /* Ensures the button doesn't grow too large */
+    flex-grow: 1; /* Makes all buttons grow equally */
+}
+
+
+/* Log Out button styles */
+.logout {
+    background: #122c21; /* Background color for Log Out button */
+    width: 100px; /* Fixed width */
+    text-align: center; /* Center text */
+    color: white; /* Text color */
+    padding: 10px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Change background on hover */
+.logout:hover {
+    background: #45BB3E; /* Change to green on hover */
+}
+
+.nav-btn:hover {
+    background-color: #3ac441; /* Hover effect for other buttons */
+    border-color: #3ac441;
+}

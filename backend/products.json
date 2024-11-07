@@ -1,0 +1,77 @@
+[
+    {
+      "id": "1",
+      "image": "./images/Kalabasa.jpg",
+      "name": "Watermelon De Cadiz",
+      "rating": {
+        "stars": 4.5,
+        "count": 87
+      },
+      "priceCents": 5000,
+      "keywords": [
+        "kalabasa",
+        "fruit",
+        "cadiz"
+      ]
+    },
+    {
+      "id": "2",
+      "image": "./images/Petchay.jpg",
+      "name": "Snow Cabbage",
+      "rating": {
+        "stars": 4,
+        "count": 127
+      },
+      "priceCents": 2095,
+      "keywords": [
+        "petchay",
+        "vegetables",
+        "cadiz"
+      ]
+    },
+    {
+      "id": "3",
+      "image": "./images/Sitaw.jpg",
+      "name": "Green Beans",
+      "rating": {
+        "stars": 4.5,
+        "count": 56
+      },
+      "priceCents": 799,
+      "keywords": [
+        "sitaw",
+        "vegetables",
+        "cadiz"
+      ]
+    },
+    {
+      "id": "4",
+      "image": "./images/Casava.jpg",
+      "name": "Cassava",
+      "rating": {
+        "stars": 5,
+        "count": 2197
+      },
+      "priceCents": 1899,
+      "keywords": [
+        "Casava",
+        "vegetables",
+        "cadiz"
+      ]
+    },
+    {
+      "id": "5",
+      "image": "./images/Corn.jpg",
+      "name": "Corn",
+      "rating": {
+        "stars": 4,
+        "count": 37
+      },
+      "priceCents": 2067,
+      "keywords": [
+        "Casava",
+        "vegetables",
+        "cadiz"
+      ]
+    }
+  ]

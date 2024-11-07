@@ -1,0 +1,564 @@
+/* Common styles for the dashboard pages */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f0f0; /* Optional background for main content area */
+}
+
+/* Background image setup */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../images/bckim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: auto;
+    filter: blur(4px); /* Adjust the blur value as needed */
+    z-index: -1; /* Ensure the background stays behind all content */
+}
+
+/* Section content */
+.content-section {
+    background-color: rgba(225, 225, 225, 0.9);
+    display: none; /* Initially hidden, controlled via JavaScript */
+    padding: 20px;
+    padding-right: 320px; /* Add padding to ensure no overlap with the right sidebar */
+    text-align: center; /* Centers the text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    border-radius: 15px;
+    
+    /* Add flexible size control */
+    width: 100%; /* Adjust based on how much width you want */
+    max-width: 800px; /* Prevents section from being too large on wide screens */
+    height: auto; /* Content dictates the height */
+    max-height: 90vh; /* Adjust max height to viewport height */
+    margin-top: 120px;
+    margin-left: 100px;
+    margin-bottom: 80px;
+}
+
+/* When a section is active, make it visible */
+.active-section {
+    display: block; /* Change display to block when section is active */
+}
+
+/* Sidebar (right side column) */
+.right-sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(225, 225, 225, 0.9); /* Slightly transparent */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* Ensures all elements in the sidebar are aligned in a column */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Centering the logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+/* Button container for sidebar buttons in a column */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons in a single column */
+    width: 100%;
+    margin: 50px;
+    margin-right: 100px;
+    align-items: center;
+}
+
+.center {
+    margin-top: 150px;
+    text-align: center;
+    font-size: 40px;
+    transition: all 0.2s ease 0.1s; /* Add delay and ease on hover */
+}
+
+/* Buttons inside the sidebar */
+
+.btnPos {
+
+    margin-top: 50px;
+
+
+}
+
+.function-btn {
+    background-color: #45BB3E;
+    color: white;
+    border: 2px solid #DBDF99;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: block;
+    width: 125%; /* Full width inside the sidebar */
+    height: 75px;
+    margin-top: 15px;
+    margin-left: -15px;
+}
+
+.function-btn:hover {
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 13px;
+    color: #3d354b;
+    border-color: #3ac441;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border-radius: 25px;
+}
+
+.center:hover {
+    transform: scale(1.05);
+}
+
+/*Add Farmer*/
+
+.formPos{
+
+    margin-left: 300px;
+
+}
+
+#addFarmerForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centers form fields vertically */
+    margin: 0 auto; /* Centers form horizontally */
+    padding: 15px;
+    width: 100%;
+    max-width: 800px; /* Prevents the form from being too wide */
+    
+}
+
+#addFarmerForm div {
+    margin: 10px 0;
+}
+
+#addFarmerForm label {
+    font-size: 18px;
+    margin-right: 10px;
+}
+
+#addFarmerForm input {
+    padding: 10px;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    width: 300px;
+}
+
+
+#addFarmerForm button {
+    margin-top: 20px;
+    width: 200px; /* Adjusted button width */
+}
+
+/* Farmer List Container */
+
+.content-section .HeaderStatus {
+
+    font-size: 50px;
+    margin-right: -300px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+}
+
+#searchUsername {
+
+    height: 35px;
+    width: 500px;
+    margin-right: -300px;
+    margin-top: -30px;
+    border-radius: 50px;
+
+}
+
+#farmersList {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the list */
+    margin-top: 20px;
+    max-height: 400px;
+    width: 115%; /* Extend to the full width of the content section */
+    margin-left: -50px; /* Center horizontally */
+    margin-right: auto;
+    
+}
+
+/* Hide the default file input */
+#imageUpload {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* Style for the custom upload button */
+.custom-upload-btn {
+    display: inline-block;
+    background-color: #45BB3E;
+    color: white;
+    border: 2px solid #DBDF99;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    height: 25px;
+    width: 150px;
+}
+
+/* Button hover effect */
+.custom-upload-btn:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+}
+
+/* Optional style for the file name display */
+#file-name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Individual farmer item */
+.farmer-item {
+    display: flex;
+    justify-content: space-between; /* Space between farmer info and the button */
+    align-items: center;
+    width: 100%; /* Full width for each row */
+    margin-right: -250px;
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensure it reaches close to the edge of the farmersList container */
+}
+
+/*Activates Scroll*/
+#statusActivation {
+    max-height: 700px; /* Set a maximum height for the section */
+    width: 100%; /* Ensure it takes full width of its parent */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    padding-bottom: 20px; /* Optional: Add padding around the scrollbar */
+}
+
+#statusActivation::-webkit-scrollbar {
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+#statusActivation::-webkit-scrollbar-thumb {
+    background-color: #45BB3E; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #DBDF99; /* Adds padding and a border around the thumb */
+
+}
+
+#statusActivation::-webkit-scrollbar-track {
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Farmer Info */
+.farmer-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    text-align: center; /* Center the text within farmer info */
+}
+
+.farmer-info p {
+    margin-right: 20px;
+    text-align: center; /* Center the text inside each paragraph */
+}
+
+/* Smaller toggle button */
+.toggle-status-btn {
+    background-color: #45BB3E;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.toggle-status-btn:hover {
+    background-color: #38A937;
+}
+
+.delete-btn {
+
+    margin-left: 5px;
+    background-color: #ee410c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+}
+
+.delete-btn:hover {
+
+    background-color: #c55409;
+
+}
+/* Style farmer info so it doesn't stretch too much */
+.farmer-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.farmer-info p {
+    margin-right: 20px;
+}
+
+.right-sidebar .admin-info {
+
+    margin-top: 50px;
+    font-size: 18px;
+    margin-bottom: -75px;
+}
+
+#usersList {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the list */
+    margin-top: 20px;
+    max-height: 400px;
+    width: 115%; /* Extend to the full width of the content section */
+    margin-left: -50px; /* Center horizontally */
+    margin-right: auto;
+}
+
+/* Individual user item */
+.user-item {
+    display: flex;
+    justify-content: space-between; /* Space between user info and the button */
+    align-items: center;
+    width: 100%; /* Full width for each row */
+    margin-right: -250px;
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensure it reaches close to the edge of the usersList container */
+}
+
+#searchUserUName {
+
+    height: 35px;
+    width: 500px;
+    margin-right: -300px;
+    margin-top: -30px;
+    border-radius: 50px;
+
+}
+
+/* Activates Scroll for user list */
+#userActivation {
+    max-height: 700px; /* Set a maximum height for the section */
+    width: 100%; /* Ensure it takes full width of its parent */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    padding-bottom: 20px; /* Optional: Add padding around the scrollbar */
+}
+
+#userActivation::-webkit-scrollbar {
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+#userActivation::-webkit-scrollbar-thumb {
+    background-color: #45BB3E; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #DBDF99; /* Adds padding and a border around the thumb */
+}
+
+#userActivation::-webkit-scrollbar-track {
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* User Info */
+.user-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    text-align: center; /* Center the text within user info */
+}
+
+.user-info p {
+    margin-right: 20px;
+    text-align: center; /* Center the text inside each paragraph */
+}
+
+/* Smaller toggle button for user status */
+.toggle-user-status-btn {
+    background-color: #45BB3E;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.toggle-user-status-btn:hover {
+    background-color: #38A937;
+}
+
+@media (max-width: 768px) {
+    /* Adjust body layout for mobile */
+    body {
+        display: block; /* Allow vertical stacking */
+        padding: 0;
+    }
+
+    /* Make the right sidebar full-width and move it below the content */
+    .right-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* Make it flow with the content */
+        padding: 20px;
+        box-shadow: none; /* Remove shadow on smaller screens */
+    }
+
+    /* Ensure the logo is centered and properly sized */
+    .logo {
+        width: 100px; /* Adjust logo size */
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Make content sections take full width */
+    .content-section {
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%; /* Full width for mobile screens */
+        box-shadow: none; /* Optional: remove shadow for simpler look */
+        max-width: 100%;
+    }
+
+    /* Stack buttons vertically */
+    .function-btn {
+        width: 100%; /* Make buttons take up the full width */
+        margin-left: 0; /* Reset margin for mobile */
+        height: 60px; /* Adjust height for mobile screens */
+    }
+
+    /* Adjust form fields for mobile */
+    #addFarmerForm {
+        width: 90%; /* Make form fields take up more space */
+        margin: 0 auto; /* Center the form on smaller screens */
+    }
+
+    #addFarmerForm input {
+        width: 100%; /* Full width for inputs on mobile */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    /* Adjust farmer list and search field for mobile */
+    #farmersList {
+        width: 100%; /* Full width of the list */
+        padding: 0;
+        margin: 0;
+    }
+
+    #searchUsername {
+        width: 100%; /* Full width search bar */
+        font-size: 16px; /* Adjust the font size */
+    }
+
+    /* Farmer list items should stack nicely on smaller screens */
+    .farmer-item {
+        flex-direction: column; /* Stack info and button vertically */
+        align-items: flex-start;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .farmer-info {
+        justify-content: space-between;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Adjust toggle button */
+    .toggle-status-btn {
+        width: 100%; /* Full width button for toggling status */
+        text-align: center;
+    }
+
+    /* Ensure scroll areas are responsive */
+    #statusActivation {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Adjust header font sizes */
+    .HeaderStatus {
+        font-size: 36px; /* Smaller headers on mobile */
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Adjust font size for readability */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em; /* Scale down headers */
+    }
+
+    .function-btn {
+        font-size: 14px; /* Smaller button text */
+    }
+}

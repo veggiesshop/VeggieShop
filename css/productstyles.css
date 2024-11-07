@@ -1,0 +1,167 @@
+/* Top Bar and Back Icon Styles */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 1000;
+    background-color: #fff;
+}
+
+.back-icon {
+    font-size: 30px;
+    color: #228b22;
+    text-decoration: none;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.back-icon img {
+    width: 30px;
+    height: auto;
+}
+
+.logo-container {
+    margin-right: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+/* Main Content and Section Titles */
+.main-content {
+    text-align: center;
+    padding-top: 120px;
+    margin-top: 10px;
+}
+
+.center {
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 75px;
+    margin-bottom: 80px;
+    color: #228b22; /* Fallback color */
+    
+    /* Only for browsers that support WebKit */
+    background: linear-gradient(to right, #969100 0%, #228b22 50%, #969100 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; /* For other browsers */
+}
+
+
+.category-title {
+    font-family: "Hammersmith One", sans-serif;
+    font-size: 40px;
+    margin-top: 40px;
+    color: #228b22;
+}
+
+/* Product Grid Styling */
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adjust min-width based on your design */
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    max-width: 100%; /* Prevent horizontal overflow */
+    overflow-y: auto; /* Scroll vertically */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+/* Product Card Styles */
+.product-card {
+    background-color: #fff;
+    border: 2px solid #dbdf99;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-color: #228b22;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-title {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 1.5em;
+    color: #1b201b;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 1em;
+    color: #1b201b;
+    margin-bottom: 15px;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.product-price {
+    font-family: 'Hammersmith One', sans-serif;
+    font-size: 1.2em;
+    color: #228b22;
+}
+
+.add-to-cart, .buy-btn {
+    font-family: 'Hammersmith One', sans-serif;
+    background-color: #228b22;
+    color: #fff;
+    border: 2px solid #dbdf99;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart:hover, .buy-btn:hover {
+    background-color: #e9f7ea;
+    color: #228b22;
+    border-color: #964B00;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .products-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjust grid for smaller screens */
+    }
+
+    .product-title {
+        font-size: 1.2em;
+    }
+
+    .product-description {
+        font-size: 0.9em;
+    }
+
+    .product-price {
+        font-size: 1em;
+    }
+}

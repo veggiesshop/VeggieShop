@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body {
+    font-family: 'Hammersmith One', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4a8c4f; /* Background color */
+}
+
+/* Background with blur effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/HomePage.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);
+    z-index: -1;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Header styles */
+.amazon-header {
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centered the header content */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 10;
+}
+
+/* Header middle section for search bar */
+.amazon-header-middle-section {
+    flex: 1; /* Allow the search bar section to take up available space */
+    display: flex;
+    justify-content: center; /* Center the search bar */
+}
+
+/* Right buttons (Login & Sign Up) */
+.right-buttons {
+    display: flex;
+    gap: 15px;
+    position: absolute; /* Position them absolutely */
+    right: 20px; /* Adjusted to the right side */
+}
+
+/* Button styles */
+#menuBtn, #signupBtn {
+    background-color: #228b22;
+    color: white;
+    border: 2px solid #dbdf99;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    width: 125px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+#menuBtn:hover, #signupBtn:hover {
+    background-color: #e9f7ea;
+    color: #1b201b;
+    border-color: #964B00;
+    box-shadow: 0 4px 8px rgba(15, 33, 15, 0.2);
+    transform: scale(1.15);
+}
+
+/* Logos container - Centered horizontally and vertically spaced */
+.logos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 10px; /* Adjusted margin for spacing */
+}
+
+/* Logo design */
+.logo-container {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.veggie-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main content styles */
+.main-content {
+    text-align: center;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Centered welcome text with gradient */
+.welcome-text {
+    font-size: 5em; /* Original size restored */
+    background: linear-gradient(to right, #247520, #28291d); /* Gradient colors */
+    -webkit-background-clip: text; /* Clipping for Safari */
+    -webkit-text-fill-color: transparent; /* Make text fill transparent */
+    margin-top: 5px;
+    animation: fadeIn 1s ease-in-out; /* Optional fade-in animation */
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Main product container */
+.productmain {
+    background: transparent;
+    padding: 20px 9%; /* Increased padding for better spacing */
+    padding-bottom: 50px;
+    margin: 1% auto;
+    text-align: center;
+}
+
+/* Heading style */
+.heading {
+    text-align: center;
+    padding: 15px 0; /* Increased padding for better spacing */
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: 50px;
+    margin-bottom: 20px; /* Changed margin to create space below the heading */
+    position: relative; /* Ensure it can be positioned correctly */
+    z-index: 5; /* Bring it above other content */
+}
+
+/* Product grid container */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 90px;
+    max-width: 1900px;
+    width: 100%;
+    justify-content: center; /* Center the grid items horizontally */
+    margin: 0 auto; /* Ensure the grid is centered */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 500px; /* Set a max height for the scrollable area */
+
+    /* Hide scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+
+.products-grid::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Navigation buttons at the bottom */
+.navigation-container {
+    display: flex;
+    justify-content: center; /* Center the navigation items */
+    gap: 80px; /* Space between navigation items */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    background-color: #1d702e;
+}
+
+.nav-btn {
+    background-color: rgb(56, 192, 62); 
+    font-family: 'Hammersmith One', sans-serif;
+    border: 5px solid #dbdf99; 
+    color: #1b201b; 
+    padding: 10px 20px; 
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.90em;
+    font-weight: 400;
+    border-radius: 4px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+    transition: 0.5s;
+    text-align: center;
+    max-width: 200px; /* Ensures the button doesn't grow too large */
+    flex-grow: 1; /* Makes all buttons grow equally */
+}
+
+/* Log Out button styles */
+.logout {
+    background: #122c21; /* Background color for Log Out button */
+    width: 100px; /* Fixed width */
+    text-align: center; /* Center text */
+    color: white; /* Text color */
+    padding: 10px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+/* Change background on hover */
+.logout:hover {
+    background: #45BB3E; /* Change to green on hover */
+}
+
+.nav-btn:hover {
+    background-color: #3ac441; /* Hover effect for other buttons */
+    border-color: #3ac441;
+}
+
+/* Other product styles */
+.product-container {
+    padding: 20px;
+    background-color: #e7eab4;
+    border: 1px solid rgb(81, 98, 0);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-container:hover {
+    transform: scale(1.09);
+    box-shadow: 0 4px 10px white;
+}
+
+.product-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.product-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #2eb030;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.add-to-cart-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #45BB3E;
+    color: white;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.add-to-cart-button:hover {
+    background-color: #a7c956;
+}

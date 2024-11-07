@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+/* General body styles */
+body {
+    font-family: 'Mukta', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background blur effect */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #80eb83;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+/* Back button style - positioned at top left */
+.back-icon {
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    position: absolute;
+    top: 10px;  /* Adjust spacing from the top */
+    left: 10px; /* Adjust spacing from the left */
+    z-index: 2; /* Ensure it stays above other elements */
+}
+
+.back-icon:hover {
+    color: #cfe5cf;
+}
+
+/* Logo positioning */
+.pos {
+    margin-top: -200px;
+}
+
+.Logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+}
+
+/* Login container styles */
+.login-container {
+    background: rgba(225, 231, 49, 0.69);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    height: 400px;
+    padding: 20px;
+    margin-top: -75px;
+    box-sizing: border-box;
+    z-index: 1;
+}
+
+/* Header with user type toggles */
+.login-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.toggle-option {
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #228b22;
+    font-weight: bold;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.slide {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33%; /* Adjust to fit 3 options equally */
+    height: 2px;
+    background-color: #228b22;
+    transition: all 0.3s ease;
+}
+
+#admin:checked ~ .slide {
+    left: 50%;
+}
+
+/* Form styles */
+.login-form {
+    display: none;
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #228b22;
+    text-align: center;
+}
+
+.login-form input {
+    width: 80%;
+    margin-left: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #228b22;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.2s ease 0.1s;
+}
+
+.login-form input:hover,
+.login-form input:focus {
+    transform: scale(1.05);
+    border-radius: 25px;
+}
+
+.login-form button {
+    margin-top: 10px;
+    width: 50%;
+    padding: 10px;
+    background-color: #228b22;
+    border: none;
+    color: white;
+    margin-left: 85px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-form button:hover,
+.login-form button:focus {
+    background-color: #1c6d1c;
+    transform: scale(1.05);
+    border-radius: 25px;
+    transition: all 0.2s ease 0.1s;
+}
+
+#loginFormFarmer,
+#loginFormAdmin,
+#loginFormUser {
+    margin-top: 45px;
+}
+
+.farmer-form,
+.admin-form,
+.user-form {
+    display: block;
+}
+
+/* Hidden elements */
+.hidden {
+    display: none;
+}
+
+.bottom-text {
+    text-align: center;
+}
+
+.color-text {
+    color: blue;
+    transition: all 0.2s ease 0.1s;
+}
+
+.color-text:hover {
+    color: #1c6d1c;
+    transform: scale(1.05);
+}
+
+/* Password toggle container */
+.show-password-container {
+    font-size: 15px;
+    margin-right: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+}
+
+.show-password-container input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+/* Error message style */
+.error-message {
+    background-color: #17e443;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 50%;
+    margin-top: 65px;
+    display: block;
+    opacity: 0;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.error-message.show {
+    opacity: 1; /* Show the message */
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 10px;
+    }
+
+    .login-form h2 {
+        font-size: 24px;
+    }
+
+    .login-form input, 
+    .login-form button {
+        font-size: 14px;
+    }
+
+    /* Adjust back icon size for smaller screens */
+    .back-icon {
+        font-size: 18px;
+        top: 5px;
+        left: 5px;
+    }
+}

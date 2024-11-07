@@ -1,0 +1,929 @@
+/* Common styles for the dashboard pages */
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
+
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    font-family: 'Mukta', sans-serif;
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f0f0; /* Optional background for main content area */
+}
+
+/* Background image setup */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bckim.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: auto;
+    filter: blur(4px); /* Adjust the blur value as needed */
+    z-index: -1; /* Ensure the background stays behind all content */
+}
+
+/* Section content */
+.content-section {
+    background-color: rgba(225, 225, 225, 0.9);
+    display: none; /* Initially hidden, controlled via JavaScript */
+    padding: 20px;
+    padding-right: 320px; /* Add padding to ensure no overlap with the right sidebar */
+    text-align: center; /* Centers the text */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow */
+    border-radius: 15px;
+    
+    /* Add flexible size control */
+    width: 100%; /* Adjust based on how much width you want */
+    max-width: 800px; /* Prevents section from being too large on wide screens */
+    height: auto; /* Content dictates the height */
+    max-height: 90vh; /* Adjust max height to viewport height */
+    margin-top: 120px;
+    margin-left: 100px;
+    margin-bottom: 80px;
+}
+
+/* When a section is active, make it visible */
+.active-section {
+    display: block; /* Change display to block when section is active */
+}
+
+/* Sidebar (right side column) */
+.right-sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(225, 225, 225, 0.9); /* Slightly transparent */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column; /* Ensures all elements in the sidebar are aligned in a column */
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* Centering the logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+}
+
+/* Button container for sidebar buttons in a column */
+.sidebar-buttons {
+    display: flex;
+    flex-direction: column; /* Stack buttons in a single column */
+    width: 100%;
+    margin: 50px;
+    margin-right: 100px;
+    align-items: center;
+}
+
+.center {
+    margin-top: 75px;
+    text-align: center;
+    font-size: 40px;
+    transition: all 0.2s ease 0.1s; /* Add delay and ease on hover */
+}
+
+/* Buttons inside the sidebar */
+
+.btnPos {
+    margin-top: 50px;
+}
+
+.no-orders-message {
+    margin-top: 200px;
+    margin-left: 300px;
+    font-size: 35px;
+}
+
+.function-btn {
+    background-color: #45BB3E; /* Background color */
+    color: white; /* Text color */
+    border: 2px solid #DBDF99; /* Border styling */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Pointer on hover */
+    border-radius: 4px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+    width: 125%; /* Full width inside the sidebar */
+    height: 75px; /* Button height */
+    margin-top: 15px; /* Space above each button */
+    margin-left: -15px; /* Adjusts left positioning */
+    text-decoration: none; /* Removes underline */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+}
+
+.function-btn:hover {
+    background-image: linear-gradient(45deg, #38C03E, #76D977); /* Gradient on hover */
+    font-family: 'Hammersmith One', sans-serif; /* Font family */
+    font-size: 13px; /* Font size */
+    color: #3d354b; /* Text color on hover */
+    border-color: #3ac441; /* Border color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    border-radius: 25px; /* More rounded corners on hover */
+}
+
+
+
+.center:hover {
+    transform: scale(1.05);
+}
+
+/* Farmer List Container */
+
+.content-section .HeaderStatus {
+
+    font-size: 50px;
+    margin-right: -300px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+
+}
+
+.hidden {
+    display: none;
+}
+
+#searchUsername {
+
+    height: 35px;
+    width: 500px;
+    margin-right: -300px;
+    margin-top: -30px;
+    border-radius: 50px;
+
+}
+
+.right-sidebar .admin-info {
+
+    margin-top: 5px;
+    font-size: 18px;
+    margin-bottom: -25px;
+}
+
+/* Style for Products List Container */
+/* Style for Products List Container */
+#productsList {
+    display: grid; /* Change from flex to grid */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, each taking equal width */
+    grid-gap: 20px; /* Space between items */
+    justify-items: center; /* Center items in each grid cell */
+    align-items: start; /* Align items at the top of each cell */
+    margin-top: 20px;
+    width: 100%;
+    padding: 0 20px;
+}
+/* Style for Individual Product Item */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 350px; /* Keep the fixed height */
+    padding: 15px;
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Adds vertical scrolling if content exceeds height */
+}
+
+/* Style for Product Image */
+.product-item img {
+    width: 100%; /* Ensures the image spans the full width of the product item */
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensures the image fits within the set height and width while maintaining aspect ratio */
+    border-radius: 8px; /* Adds rounded corners to the image */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+/* Style for Product Details (Name, Qty, etc.) */
+.product-item .product-info {
+    text-align: center; /* Center-aligns the text */
+    flex-grow: 1; /* Ensures the content fills the available space in the flex container */
+}
+
+.product-item .product-info p {
+    margin: 3px 0; /* Reduce margin */
+    font-size: 14px; /* Reduce font size slightly */
+    color: #333;
+}
+
+/* Style for Toggle Button */
+.product-item .toggle-status-btn {
+    background-color: #45BB3E; /* Primary button background color */
+    color: white; /* Button text color */
+    border: none; /* Removes border */
+    padding: 6px 12px; /* Padding inside the button */
+    font-size: 14px; /* Font size for the button text */
+    cursor: pointer; /* Changes the cursor to a pointer on hover */
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: all 0.3s ease; /* Adds a smooth transition effect */
+    margin-top: 10px; /* Margin above the button */
+}
+
+.product-item .toggle-status-btn:hover {
+    background-color: #38A937; /* Darker green background on hover */
+}
+
+
+/* Hide the default file input */
+.imageUploadContainer {
+
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+
+}
+
+/* Optional style for the file name display */
+/* Style the filename display */
+#file-name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+    display: block;
+    text-align: center; /* Center the filename */
+}
+
+/* Hide the default file input */
+#imageUpload {
+    padding: 10px;
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#imageUpload:hover {
+
+    background-color: #f1f1f1;
+
+}
+
+#imageUpload::-webkit-file-upload-button {
+    display: none;
+}
+
+#imageUpload::before {
+    content: 'Choose an image';
+    display: inline-block;
+    background-color: #38C03E;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the custom button */
+#imageUpload:hover::before {
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    border-radius: 25px;
+    
+}
+
+
+
+/* Individual farmer item */
+.farmer-item {
+    display: flex;
+    justify-content: space-between; /* Space between farmer info and the button */
+    align-items: center;
+    width: 100%; /* Full width for each row */
+    margin-right: -250px;
+    margin-top: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: rgba(245, 245, 245, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Ensure it reaches close to the edge of the farmersList container */
+}
+
+/*Activates Scroll*/
+#farmerProducts {
+    max-height: 700px; /* Set a maximum height for the section */
+    width: 100%; /* Ensure it takes full width of its parent */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    padding-bottom: 20px; /* Optional: Add padding around the scrollbar */
+}
+
+#farmerProducts::-webkit-scrollbar {
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+#farmerProducts::-webkit-scrollbar-thumb {
+    background-color: #45BB3E; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #DBDF99; /* Adds padding and a border around the thumb */
+
+}
+
+#farmerProducts::-webkit-scrollbar-track {
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/*Modal*/
+/* Modal Button */
+.modal-title{
+
+    margin-left: 160px;
+
+}
+#modalBtnContainer {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: -300px;    
+}
+
+.custom-modal-btn {
+    background-color: #45BB3E;
+    color: white;
+    border: 2px solid #45BB3E;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.custom-modal-btn:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+}
+
+.custom-modal-btn2 {
+    background-color: #45BB3E;
+    color: white;
+    margin-left: 15px;
+    border: 2px solid #45BB3E;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.custom-modal-btn2:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #f80f07, #ec3c10e3);
+    border: 2px solid #f80f07;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+}
+
+.custom-add-button {
+
+    background-color: #45BB3E;
+    color: white;
+    border: 2px solid #DBDF99;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+    margin-top: 15px;
+    margin-left: 150px;
+    max-height: 150px;
+    max-width: 150px;
+
+}
+
+.custom-add-button:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+
+}
+
+.custom-edit-btn {
+
+    background-color: #45BB3E;
+    color: white;
+    border: 2px solid #DBDF99;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+    margin-top: 5px;
+    margin-left: 150px;
+    max-height: 150px;
+    max-width: 150px;
+
+
+}
+
+.edit-btn {
+
+    background-color: #45BB3E;
+    color: white;
+    margin-left: 15px;
+    border: 2px solid #45BB3E;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+    max-height: 50px;
+    max-width: 150px;
+
+}
+
+.edit-btn:hover {
+
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #8ecae6, #aedcf1);
+    border: 2px solid #aedcf1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+
+}
+
+.custom-edit-btn:hover {
+
+
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+
+}
+
+/* Style for the custom upload button */
+.custom-upload-btn {
+    display: inline-block;
+    background-color: #45BB3E;
+    color: white;
+    border: 2px solid #DBDF99;
+    padding: 12px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    height: 20px;
+    width: 70px;
+}
+
+/* Button hover effect */
+.custom-upload-btn:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+}
+
+/* Optional style for the file name display */
+#file-name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Hide the default file input */
+#imageUpload {
+    margin-top: 15px;
+    z-index: -1;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* Sits on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: 70%;
+    margin-top: 150px;
+    max-width: 500px;
+    max-height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal Form */
+#addProductForm, .form-design {
+    display: flex;
+    flex-direction: column;
+}
+
+#addProductForm input {
+    margin: 15px 15px 0;
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-design, input {
+
+    margin: 15px 15px 0;
+    width: 75%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
+
+/* Style for the file input */
+#productImage {
+    padding: 10px;
+    border: 2px dashed #ccc;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect on the file input */
+#productImage:hover {
+    background-color: #f1f1f1;
+}
+
+/* Optional: Hide default file input appearance */
+#productImage::-webkit-file-upload-button {
+    display: none;
+}
+
+#productImage::before {
+    content: 'Choose an image';
+    display: inline-block;
+    background-color: #38C03E;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for the custom button */
+#productImage:hover::before {
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    border-radius: 25px;
+    
+}
+
+/*Error Message*/
+.error-message {
+    background-color:  #76D977;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 370px;
+    margin-left: 250px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.error-message.show {
+    opacity: 1; /* Show the message */
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Order Modal */
+.order-modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 100; /* Sits on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+.order-modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: auto;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.3s ease; /* Smooth fade-in */
+}
+
+.order-modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.order-modal .close:hover,
+.order-modal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.order-modal h2 {
+    color: #3d354b; /* Matching color */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Order Modal Buttons */
+.order-modal .custom-modal-btn,
+.order-modal .custom-modal-btn2 {
+    background-color: #45BB3E;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid #45BB3E;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.order-modal .custom-modal-btn:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #38C03E, #76D977);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+}
+
+.order-modal .custom-modal-btn2:hover {
+    border-radius: 25px;
+    background-image: linear-gradient(45deg, #f80f07, #ec3c10e3);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    color: #3d354b;
+}
+
+#farmersList {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the list */
+    margin-top: 20px;
+    max-height: 400px;
+    width: 115%; /* Extend to the full width of the content section */
+    margin-left: -50px; /* Center horizontally */
+    margin-right: auto;
+    
+}
+
+/*Activates Scroll*/
+#orderList {
+    max-height: 700px; /* Set a maximum height for the section */
+    width: 100%; /* Ensure it takes full width of its parent */
+    overflow-y: auto; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    padding-bottom: 20px; /* Optional: Add padding around the scrollbar */
+}
+
+#orderList::-webkit-scrollbar {
+    height: 12px; /* Height of the horizontal scrollbar */
+}
+
+#orderList::-webkit-scrollbar-thumb {
+    background-color: #45BB3E; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #DBDF99; /* Adds padding and a border around the thumb */
+
+}
+
+#orderList::-webkit-scrollbar-track {
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Farmer Info */
+.farmer-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    text-align: center; /* Center the text within farmer info */
+}
+
+.farmer-info p {
+    margin-right: 20px;
+    text-align: center; /* Center the text inside each paragraph */
+}
+
+/* Farmer Info */
+.farmer-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    text-align: center; /* Center the text within farmer info */
+}
+
+.farmer-info p {
+    margin-right: 20px;
+    text-align: center; /* Center the text inside each paragraph */
+}
+
+/* Smaller toggle button */
+.confirm-order-btn {
+    background-color: #45BB3E;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.confirm-order-btn:hover {
+    background-color: #38A937;
+}
+
+@media (max-width: 768px) {
+    /* Adjust body layout for mobile */
+    body {
+        display: block; /* Allow vertical stacking */
+        padding: 0;
+    }
+
+    /* Make the right sidebar full-width and move it below the content */
+    .right-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative; /* Make it flow with the content */
+        padding: 20px;
+        box-shadow: none; /* Remove shadow on smaller screens */
+    }
+
+    /* Ensure the logo is centered and properly sized */
+    .logo {
+        width: 100px; /* Adjust logo size */
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Make content sections take full width */
+    .content-section {
+        margin: 0 auto;
+        padding: 20px;
+        width: 100%; /* Full width for mobile screens */
+        box-shadow: none; /* Optional: remove shadow for simpler look */
+        max-width: 100%;
+    }
+
+    /* Stack buttons vertically */
+    .function-btn {
+        width: 100%; /* Make buttons take up the full width */
+        margin-left: 0; /* Reset margin for mobile */
+        height: 60px; /* Adjust height for mobile screens */
+    }
+
+    /* Adjust form fields for mobile */
+    #addFarmerForm {
+        width: 90%; /* Make form fields take up more space */
+        margin: 0 auto; /* Center the form on smaller screens */
+    }
+
+    #addFarmerForm input {
+        width: 100%; /* Full width for inputs on mobile */
+        font-size: 16px; /* Adjust font size for smaller screens */
+    }
+
+    /* Adjust farmer list and search field for mobile */
+    #farmersList {
+        width: 100%; /* Full width of the list */
+        padding: 0;
+        margin: 0;
+    }
+
+    #searchUsername {
+        width: 100%; /* Full width search bar */
+        font-size: 16px; /* Adjust the font size */
+    }
+
+    /* Farmer list items should stack nicely on smaller screens */
+    .farmer-item {
+        flex-direction: column; /* Stack info and button vertically */
+        align-items: flex-start;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .farmer-info {
+        justify-content: space-between;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Adjust toggle button */
+    .toggle-status-btn {
+        width: 100%; /* Full width button for toggling status */
+        text-align: center;
+    }
+
+    /* Ensure scroll areas are responsive */
+    #statusActivation {
+        width: 100%;
+        padding: 0;
+    }
+
+    /* Adjust header font sizes */
+    .HeaderStatus {
+        font-size: 36px; /* Smaller headers on mobile */
+        text-align: center;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Adjust font size for readability */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5em; /* Scale down headers */
+    }
+
+    .function-btn {
+        font-size: 14px; /* Smaller button text */
+    }
+}
+
+@media (max-width: 768px) {
+    .right-sidebar {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Adjust height */
+        position: static; /* Make it non-fixed */
+    }
+    .content-section {
+        margin: 10px;
+        max-width: 100%; /* Ensure content fits */
+    }
+}
+
+

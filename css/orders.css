@@ -1,0 +1,286 @@
+/* General Reset and Layout */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif; /* Changed to match previous CSS */
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5a9a5f; /* Green color */
+    padding: 10px;
+}
+
+.logo-container .logo {
+    height: 50px;
+}
+
+.back-icon {
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-icon:hover {
+    color: #d0e6d0; /* Lighter green on hover */
+}
+
+/* Main Content */
+.main {
+    max-width: 850px;
+    margin: 90px auto 100px; /* Centered and maintained margin */
+    padding: 0 20px;
+}
+
+.page-title {
+    font-weight: 700;
+    font-size: 26px;
+    margin-bottom: 25px;
+    text-align: center; /* Centered the title */
+}
+
+/* Orders Grid */
+.orders-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+}
+
+/* Order Header */
+.order-header {
+    background-color: rgb(240, 242, 242);
+    border: 1px solid rgb(213, 217, 217);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-radius: 8px; /* Unified radius */
+}
+
+.order-header-left-section {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.order-header-label {
+    font-weight: 500;
+}
+
+.order-date,
+.order-total {
+    margin-right: 45px;
+}
+
+.order-header-right-section {
+    flex-shrink: 1;
+}
+
+/* Button styles */
+#ordHist{
+    background-color: #228b22;
+    color: white;
+    border: 2px solid #dbdf99;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+    width: 125px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.track-package-button {
+    background-color: #5a9a5f; /* Green color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.track-package-button:hover {
+    background-color: #4a8a4f; /* Darker green on hover */
+}
+
+.order-actions {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.order-delivery-date {
+    margin-top: 15px;
+}
+
+.order-header-label {
+    font-weight: 500;
+}
+
+.pagination-button { padding: 5px; margin: 0 3px; }
+.pagination-button.active { font-weight: bold; color: blue; }
+
+/* Responsive Styles for Order Header */
+@media (max-width: 575px) {
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start; /* Changed from 'start' to 'flex-start' */
+        line-height: 23px;
+        padding: 15px;
+    }
+    .order-header-left-section {
+        flex-direction: column;
+    }
+    .order-header-label {
+        margin-right: 5px;
+    }
+    .order-date,
+    .order-total {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        margin-right: 0;
+    }
+    .order-header-right-section {
+        display: grid;
+        grid-template-columns: auto 1fr;
+    }
+}
+
+/* Order Details */
+.order-details-grid {
+    padding: 40px 25px;
+    border: 1px solid rgb(213, 217, 217);
+    border-top: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: grid;
+    grid-template-columns: 110px 1fr 220px;
+    column-gap: 35px;
+    row-gap: 60px;
+    align-items: center;
+}
+
+/* Responsive Styles for Order Details */
+@media (max-width: 800px) {
+    .order-details-grid {
+        grid-template-columns: 110px 1fr;
+        row-gap: 0;
+        padding-bottom: 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    .order-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Product Image */
+.product-image-container {
+    text-align: center;
+}
+
+.product-image-container img {
+    max-width: 110px;
+    max-height: 110px;
+}
+
+/* Product Details */
+.product-name {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.product-delivery-date {
+    margin-bottom: 3px;
+}
+
+.product-quantity {
+    margin-bottom: 8px;
+}
+
+/* Buttons */
+.buy-again-button,
+.track-package-button {
+    background-color: #5a9a5f; /* Green color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy-again-button:hover,
+.track-package-button:hover {
+    background-color: #4a8a4f; /* Darker green on hover */
+}
+
+.buy-again-icon {
+    width: 25px;
+    margin-right: 15px;
+}
+
+/* Product Actions */
+.product-actions {
+    align-self: flex-start; /* Adjusted alignment */
+}
+
+/* Responsive Styles for Buttons */
+@media (max-width: 800px) {
+    .buy-again-button {
+        margin-bottom: 10px;
+    }
+
+    .product-actions {
+        grid-column: 2; /* Adjusted to maintain grid layout */
+        margin-bottom: 30px;
+    }
+
+    .track-package-button {
+        width: 140px; /* Unified button width */
+    }
+}
+
+@media (max-width: 450px) {
+    .product-image-container {
+        margin-bottom: 25px;
+    }
+
+    .product-image-container img {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    .product-name {
+        margin-bottom: 10px;
+    }
+
+    .product-quantity {
+        margin-bottom: 15px;
+    }
+
+    .buy-again-button {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .product-actions {
+        grid-column: auto; /* Reset grid column */
+        margin-bottom: 70px;
+    }
+
+    .track-package-button {
+        width: 100%;
+        padding: 12px;
+    }
+}
